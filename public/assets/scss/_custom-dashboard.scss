@@ -1,0 +1,100 @@
+/* 
+----------------------------------
+    : Custom - Dashboard css :
+----------------------------------
+*/
+.dash-social-icon {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    i {
+        background-color: $primary-rgba;
+        color: $primary;
+        border-radius: 50%;
+        font-size: 24px;
+        padding: 14px 15px;
+    }
+}
+.dash-flag-icon .flag {
+    display: inline-block;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: $white;
+    border-radius: 50%;
+}
+.dash-analytic-icon {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    i {
+        border-radius: 50%;
+        font-size: 24px;
+        padding: 14px 15px;
+    }
+}
+.analytic-chart-label {
+  .analytic-label-perform {
+    margin-bottom: 0;
+    text-align: center;
+  }  
+  .list-inline {
+    text-align: center;
+  }
+  .analytic-chart-piety {
+    text-align: right;
+  }
+}
+.ecommerce-widget {
+    .card-header {
+        border-bottom: none;
+        .dash-analytic-icon {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .card-footer {
+        border-top: none;
+    }
+}
+.product-file-type {
+    .img-icon {
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        font-weight: 600;
+        border-radius: 50%;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+.ecommerce-upload {
+    .dropzone {
+            min-height: 278px;
+            border-top: 1px dashed $primary;
+            border-right: 1px dashed $primary;
+            border-left: 1px dashed $primary;
+            border-bottom: none;
+            background: $primary-rgba;
+            border-radius: 0;
+            margin: 0 1px 0 0;
+        .dz-message {
+            font-size: 20px;
+        }
+    }
+    img {
+        margin-top: -22%;
+        width: 100%;
+    }
+}
+#latestorder_wrapper {
+    .dataTables_length {
+        display: none !important;
+    }
+}
+#topproducts_wrapper {
+    .dataTables_length {
+        display: none !important;
+    }
+}

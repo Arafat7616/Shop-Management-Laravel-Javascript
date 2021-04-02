@@ -1,0 +1,458 @@
+/* 
+-------------------------------
+    : Custom - Topbar css :
+-------------------------------
+*/
+.toggle-menu {
+  .leftbar {
+    position: fixed;
+    width: 250px;
+    margin-left: 0;
+    transition: all 0.3s ease;    
+  }
+  .rightbar {
+    margin-left: 80px;
+    .topbar {
+      left: 80px;
+    }
+  }
+}
+.topbar-mobile {
+    display: none;
+    background-color: $card-bg;
+    padding: 20px 30px;
+    border-bottom: 1px solid $border-color;
+    .mobile-logobar {
+      display: inline-block;  
+      img {
+        width: 120px;
+      }
+    }
+    .mobile-togglebar {
+      display: inline-block;
+      float: right;
+      margin-top: 2px;
+      a.topbar-toggle-hamburger {
+          img {
+              width: 24px;
+              filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+              &.menu-hamburger-vertical {
+                display: none;
+              }
+          }
+      }      
+      .menu-hamburger {
+          img {
+            width: 24px;
+            filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+            &.menu-hamburger-close {
+              display: none;
+            }
+          }          
+      }
+    }
+}
+.topbar {
+    background-color: $topbar-bg-color;
+    padding: 15px 30px;
+    position: fixed;
+    z-index: 1;
+    left: 250px;
+    right: 0;
+    border-bottom: 1px solid $border-color;
+    .dropdown-toggle {
+      &::after {
+        display: none;
+      }
+    }
+    .searchbar {
+      input[type="search"] {
+        background-color: $primary-rgba;
+        color: $primary;
+        font-size: 16px;
+        padding-left: 20px;
+        border: none;
+        border-radius: 50px 0 0 50px;
+      }
+      ::placeholder {
+        color: $primary;
+      }
+      .input-group-append {
+        margin-left: 0px;
+      }
+      .btn {
+        background-color: $primary-rgba;
+        color: $primary;
+        font-weight: 700;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 0 50px 50px 0;
+        padding: 3px 15px 3px 5px;
+        box-shadow: none;
+        img {
+          width: 20px;
+          filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+        }
+      }
+    }
+    .togglebar {
+      display: inline-block;
+      padding-top: 1px;
+      .menu-hamburger {
+          img {
+            filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+            width: 20px;
+            &.menu-hamburger-close {
+              display: none;
+            }
+          }          
+      }
+    }
+    .infobar {
+      display: inline-block;
+      float: right;
+      > ul > li {
+          margin-right: 0;
+          margin-left: 15px;
+          &:first-child {
+            margin-left: 0;
+          }
+      }
+      .infobar-icon {
+          background-color: $primary-rgba;
+          color: $primary;
+          border-radius: 50%;
+          display: flex;
+          line-height: 40px;
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          img {
+            filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+          }
+          i {
+            padding: 12px;
+          }
+          .live-icon {
+              position: absolute;
+              bottom: -5px;
+              margin: 0px 4px;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              border: 2px solid $card-bg;
+              background-color: $primary;
+          }
+          &:hover {
+            background-color: $primary;
+            color: $white;
+            img {
+              filter: invert(0) sepia(0) saturate(14) hue-rotate(225deg);
+            }
+          }
+      }
+      .flag {
+          display: inline-block;
+          font-size: 18px;
+          width: 34px;
+          height: 34px;
+          line-height: 34px;
+          vertical-align: middle;
+          text-align: center;
+          background-color: $white;
+          border-radius: 50%;
+          background-size: cover;
+          background-position: center;
+          margin-top: -12px;
+      }
+    }
+}
+.breadcrumbbar {
+    padding: 30px 30px 0 30px;  
+    margin-top: 70px;  
+    .page-title {
+      font-size: 20px;
+      color: $heading-color;
+      margin-bottom: 5px;
+      margin-top: 0;
+    }
+    .breadcrumb-list {
+      text-align: left;
+    }
+    .breadcrumb {
+      padding: 0 0 0;
+      .breadcrumb-item {
+        a {
+          color: $muted;
+        }
+      }
+      .breadcrumb-item.active {
+        color: $heading-color;
+      }
+    }    
+    .breadcrumb-item+.breadcrumb-item::before {
+      content: "\F764";
+      font: normal normal normal 24px/1 "Material Design Icons";
+      font-size: 5px;
+      vertical-align: middle;
+    }
+    .widgetbar {
+      text-align: right;
+    }
+}
+.infobar-notifications-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  background-color: $card-bg;
+  overflow-x: hidden;
+  transition: 0.5s;
+  &.sidebarshow {
+    width: 420px;
+  }
+  .infobar-notifications-sidebar-head {
+      background-color: $card-bg;
+      color: $white;
+      padding: 14px 30px;
+      border-bottom: 1px solid $border-color;
+      h4 {
+        margin-bottom: 0;
+        line-height: 40px;
+        font-size: 20px;
+        color: $white;
+      }
+      .infobar-notifications-close {
+        background-color: $primary-rgba;
+        padding: 4px 10px;
+        color: $white;
+        border-radius: 50%;
+        font-size: 20px;
+        &:hover {
+          background-color: $primary;
+          img {
+            filter: invert(0) sepia(0) saturate(14) hue-rotate(225deg);
+          }
+        }
+        img {
+          width: 20px;
+          filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+        }
+    }
+  }  
+  .infobar-notifications-sidebar-body {      
+      .nav {
+        padding: 30px;
+        border-bottom: 1px solid $border-color;
+      }
+      .nav-link {
+        padding: 8px 14px;
+        border-radius: 0;        
+        color: $primary;
+        background-color: $primary-rgba;
+        &:hover {
+          background-color: rgba(110, 129, 220, 0.25);
+        }
+      }
+      .nav-link.active {
+          &:hover {
+            background-color: $primary;
+          }          
+      }
+      .tab-content {
+        padding: 15px 0;
+
+        .media {
+            padding: 15px 30px;
+            &:hover {
+              background-color: $secondary-rgba;
+            }
+            img {
+              width: 42px;
+            }
+            .img-icon {
+                width: 46px;
+                height: 46px;
+                line-height: 46px;
+                background-color: $border-color;
+                color: $muted;
+                font-weight: 600;
+                border-radius: 50%;
+                font-size: 18px;
+                text-align: center;
+            }
+            .action-icon {
+                width: 46px;
+                height: 46px;
+                line-height: 38px;
+                font-weight: 600;
+                border-radius: 50%;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        h5 {
+          font-size: 16px;
+          color: $heading-color;
+          margin-top: 0;
+          margin-bottom: 5px;
+          .badge {
+            margin-left: 7px;
+          }
+          .timing {
+            color: $muted;
+            float: right;
+            font-size: 12px;
+            margin-top: 3px;
+          }
+          &.action-title {
+            margin-top: 12px;
+          }
+        }
+        p {
+          margin-bottom: 0;
+          span {
+            margin-right: 5px;
+          }
+          .timing {
+            color: $muted;
+            float: right;
+            font-size: 12px;
+            margin-top: 3px;
+          }
+        }
+      }
+  }
+}
+.infobar-notifications-sidebar-overlay {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1000;
+}
+.infobar-settings-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  background-color: $card-bg;
+  overflow-x: hidden;
+  transition: 0.5s;
+  &.sidebarshow {
+    width: 420px;
+  }
+  .infobar-settings-sidebar-head {
+      background-color: $card-bg;
+      color: $white;
+      padding: 14px 30px;
+      border-bottom: 1px solid $border-color;
+      h4 {
+        margin-bottom: 0;
+        line-height: 40px;
+        font-size: 20px;
+        color: $white;
+      }
+      .infobar-settings-close {
+        background-color: $primary-rgba;
+        padding: 4px 10px;
+        color: $white;
+        border-radius: 50%;
+        font-size: 20px;
+        &:hover {
+          background-color: $primary;
+          img {
+            filter: invert(0) sepia(0) saturate(14) hue-rotate(225deg);
+          }
+        }
+        img {
+          width: 20px;
+          filter: invert(0.62) sepia(1) saturate(4.5) hue-rotate(199deg);
+        }
+    }
+  }  
+  .infobar-settings-sidebar-body {   
+    .custom-color-setting {
+      padding: 30px;
+    }   
+    .custom-mode-setting {
+        padding: 30px;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+    .custom-layout-setting {
+      padding: 30px;
+    }
+  }
+}
+.infobar-settings-sidebar-overlay {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1000;
+}
+.languagebar {
+  .dropdown-menu {
+    top: 18px !important;
+    border-radius: 3px;
+    .dropdown-item {
+      color: $muted;
+      &:focus {
+        color: $white;
+        background-color: $border-color;
+      }
+      &:hover {
+        color: $white;
+        background-color: $border-color;
+      }
+    }
+    i {
+      margin-right: 10px;
+    }
+    .flag {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        margin-top: 0;
+    }
+  }
+}
+.account-box {
+  background-color: $border-color;
+  border-radius: 3px;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  h5 {
+    color: $muted;
+    margin: 15px 0 5px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  &.active {
+    background-color: $primary;
+    h5 {
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
+  }
+  &:hover {
+    background-color: $primary;
+    h5 {
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
+  }
+}

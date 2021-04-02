@@ -1,0 +1,143 @@
+/* 
+--------------------------------
+    : Custom - Widgets css :
+--------------------------------
+*/
+/* -- Widget - Basic -- */
+.widget-icon-bg {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* --  Widget - To Do Lists -- */
+.to-do-list {
+	.list-group-item {
+		border: none;
+	}	
+    .custom-control-label {
+        color: $muted;
+    }
+}
+.to-do-list-remove {
+	float: right;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+    	color: $danger !important;
+    }
+}
+/* -- Widget - Action History -- */
+.activities-history-list {
+    position: relative;
+    i {
+        position: absolute;
+        color: $primary;
+        top: 9px;
+        left: 9px;
+        font-size: 18px;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 3px;
+        background-color: $primary-rgba;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 3px;
+        top: 36px;
+        left: 16px;
+        background: $border-color;
+    }
+    .activities-history-item {
+        margin-left: 55px;
+        margin-bottom: 36px;
+    }
+    &.activities-success {
+        i {
+            color: $success;
+        }
+        &:before {
+            background-color: $success-rgba;
+        }
+    }
+    &.activities-danger {
+        i {
+            color: $danger;
+        }
+        &:before {
+            background-color: $danger-rgba;
+        }
+    }
+    &.activities-info {
+        i {
+            color: $info;
+        }
+        &:before {
+            background-color: $info-rgba;
+        }
+    }
+}
+.icon-timer i {
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.2);
+}
+.widget-newsletter {
+    .form-control {
+        background-color: $white;
+        border-radius: 50px;
+        &:focus {
+            background-color: $white;
+        }
+    }
+    .input-group-append {
+        padding: 3px;
+        background: $white;
+        border-radius: 0 50px 50px 0;
+        .btn {
+            border-radius: 50px;
+            background-color: $danger;
+            color: $white;
+            padding: 4px 10px;
+            font-weight: 700;
+        }
+    }
+}
+.chartist-widget-color {
+    height: 194px !important;
+    .ct-series-a .ct-bar {
+        stroke: $white;
+    }
+    .ct-label {
+        fill: $white;
+        color: $white;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}
+.blog-meta {
+  text-align: right;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+    .blog-link {
+        text-align: center;
+    }
+    .blog-meta {
+      text-align: center;
+      margin-top: 15px;
+    }
+}
