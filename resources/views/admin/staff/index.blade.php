@@ -119,7 +119,7 @@
                     <!--data listing table-->
                     <div class="card-body">
                         <input type="hidden" id="editableId" value="">
-                        <form action="{{ route('admin.staff.store') }}" method="post" enctype="multipart/form-data">
+                        <form id="form_id" action="{{ route('admin.staff.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -189,6 +189,7 @@
         document.getElementById('show-create-staff').onclick = function openModal() {
             $('#submit-btn').show();
             $('#update-btn').hide();
+            $('#form_id').trigger('reset');
             $('#add-staff-modal').modal('show');
             document.getElementById('add-staff-modal-title').innerHTML = 'Add new staff';
         }
@@ -243,7 +244,7 @@
             })
 
             $('#add-staff-modal').modal('show');
-            document.getElementById('add-staff-modal-title').innerHTML = 'Add new staff';
+            document.getElementById('add-staff-modal-title').innerHTML = 'Edit staff';
         }
 
 
