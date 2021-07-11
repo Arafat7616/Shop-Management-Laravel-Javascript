@@ -2,6 +2,8 @@
 This project is a simple shop management project .There have Staff Management , Inventory management , and POS (Point of sale )
 
 ## Note 
+    If anyone Note any problem or bug please please give me pull request . I will marge it.
+
     every product price is 200 taka .So sale every product more then 200 Taka.According to dummy data.
 
 	
