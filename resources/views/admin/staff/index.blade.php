@@ -40,7 +40,8 @@
             <div class="col-lg-12">
                 <div class="card m-b-30">
                     <div class="card-header">
-                        <h5 class="card-title">Staff Product</h5>
+                        <h5 class="card-title">Staff
+                        </h5>
                     </div>
                     <div class="card-body">
                         @include('layouts.message')

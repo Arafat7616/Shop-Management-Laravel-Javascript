@@ -1,16 +1,11 @@
-## Table of contents
-* [General info](#general-info)
-* [Technologies](#technologies)
-* [Setup](#setup)
-
 ## General info
-This project is simple Lorem ipsum dolor generator.
+This project is a simple shop management project .There have Staff Management , Inventory management , and POS (Point of sale )
 	
 ## Technologies
 Project is created with:
 * laravel: 7.25.0
 * Javascript
-* Nootstrap
+* Bootstrap
 	
 ## Setup
 To run this project, install it locally using laravel:
@@ -22,3 +17,9 @@ $ copy .env.example to .env file name && cerate a database
 $ run command "php artisan key:generate"
 $ run command "php artisan migrate:fresh --seed"
 ```
+
+## Credentials 
+admin rele -> email : admin@gmail.com
+            password : password
+staff rele -> email : staff@gmail.com
+            password : password

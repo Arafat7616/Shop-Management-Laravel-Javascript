@@ -14,7 +14,7 @@ class CustomerSeeder extends Seeder
     {
         DB::table('customers')->insert([
             'name'      => 'Customer',
-            'phone'     => '01304734623',
+            'phone'     => '01829226755',
         ]);
     }
 }
