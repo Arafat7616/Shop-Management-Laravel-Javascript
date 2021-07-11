@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class StaffController extends Controller
@@ -153,18 +154,15 @@ class StaffController extends Controller
             $user->password = Hash::make($request->input('password'));
         }
         $user->type = $request->input('type',2);
-        //Auto resize with 500 wide/ 500 height
         if($request->hasFile('image')){
-            $image = $request->file('image');
-            $OriginalExtension = $image->getClientOriginalExtension();
-            $image_name = 'staff-profile-' . Carbon::now()->addHour(6) .'.'. $OriginalExtension;
-            $destinationPath = ('uploads/images');
-            $resize_image = Image::make($image->getRealPath());
-            $resize_image->resize(500, 500, function($constraint){
-                $constraint->aspectRatio();
-            });
-            $resize_image->save($destinationPath . '/' . $image_name);
-            $user->image = $image_name;
+            if ($user->image != null && $user->image != 'uploads/images/default.png')
+                File::delete(public_path($user->image)); //Old image delete
+            $image             = $request->file('image');
+            $folder_path       = 'uploads/images/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+            //resize and save to server
+            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            $user->image   = $folder_path . $image_new_name;
         }
         $user->save();
         $message = 'Successfully edited '.$request->input('name') .'as a staff';
@@ -188,7 +186,14 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
+
         $user = User::findOrFail($id);
+        if($user->id === Auth::user()->id){
+            return response()->json([
+                'type' => 'error',
+                'message' => 'You can\'t able to delete yourself',
+            ]);
+        }
         try {
             if ($user->image != null && $user->image != "uploads/images/default.png")
                 File::delete(public_path($user->image)); //Old image delete
