@@ -155,7 +155,7 @@ class StaffController extends Controller
         }
         $user->type = $request->input('type',2);
         if($request->hasFile('image')){
-            if ($user->image != null && $user->image != 'uploads/images/default.png')
+            if ($user->image != null)
                 File::delete(public_path($user->image)); //Old image delete
             $image             = $request->file('image');
             $folder_path       = 'uploads/images/';
@@ -195,7 +195,7 @@ class StaffController extends Controller
             ]);
         }
         try {
-            if ($user->image != null && $user->image != "uploads/images/default.png")
+            if ($user->image != null)
                 File::delete(public_path($user->image)); //Old image delete
             $user->delete();
             return response()->json([

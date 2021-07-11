@@ -8,7 +8,7 @@
         <!-- End Logobar -->
         <!-- Start Profilebar -->
         <div class="profilebar text-center" style="">
-            <img src="{{ asset('uploads/images/'.auth()->user()->image) }}" class="img-fluid">
+            <img src="{{ asset(auth()->user()->image ?? 'uploads/images/default.png') }}" class="img-fluid">
             <div class="profilename">
                 <h5 class="text-white">{{ auth()->user()->name }}</h5>
                 <p>{{ auth()->user()->phone }}</p>

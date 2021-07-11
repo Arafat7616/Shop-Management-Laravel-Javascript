@@ -38,7 +38,7 @@
                             @foreach($items as $item)
                                 <div class="col-md-3 col-lg-3 col-xl-3 product-items">
                                     <div class="card m-b-30" onclick="addItem({{ $item->id }})">
-                                        <img class="card-img-top" src="{{ asset('uploads/images/'.$item->image) }}" alt="Card image cap">
+                                        <img class="card-img-top" src="{{ asset($item->image ?? 'uploads/images/default.png') }}" alt="Card image cap">
                                         <div class="card-body btn btn-info" >
                                             <h5 class="card-title font-18" id="item-name-id-{{ $item->id }}">{{ $item->name }}</h5>
                                             <span class="badge badge-pill badge-success" id="item-quantity-id-{{ $item->id }}"></span>

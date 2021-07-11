@@ -31,7 +31,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix'=>'', 'middlewar
     Route::resource('product', 'ProductController');
     Route::resource('sale', 'SaleController');
     Route::resource('staff', 'StaffController');
-    Route::post('staff-update', 'StaffController@update');
+    Route::post('staff-update', 'StaffController@update')->name('staffUpdate');
 
 });
 

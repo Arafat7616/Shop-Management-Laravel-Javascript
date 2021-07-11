@@ -161,8 +161,8 @@
                                 </div>
                                 <select class="custom-select" id="status" name="status">
                                     <option disabled selected="">Choose...</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Staff</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
                                 </select>
                             </div>
                             <div class="input-group mb-3">
