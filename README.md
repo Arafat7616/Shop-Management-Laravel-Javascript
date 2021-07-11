@@ -1,5 +1,9 @@
 ## General info
 This project is a simple shop management project .There have Staff Management , Inventory management , and POS (Point of sale )
+
+## Note 
+    every product price is 200 taka .So sale every product more then 200 Taka.According to dummy data.
+
 	
 ## Technologies
 Project is created with:

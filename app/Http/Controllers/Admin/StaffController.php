@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -187,6 +188,18 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        try {
+            if ($user->image != null && $user->image != "uploads/images/default.png")
+                File::delete(public_path($user->image)); //Old image delete
+            $user->delete();
+            return response()->json([
+                'type' => 'success',
+            ]);
+        }catch (\Exception$exception){
+            return response()->json([
+                'type' => 'error',
+            ]);
+        }
     }
 }
