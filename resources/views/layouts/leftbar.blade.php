@@ -3,7 +3,7 @@
     <div class="sidebar">
         <!-- Start Logobar -->
         <div class="logobar">
-            <h3><b>BD HIKE</b></h3>
+            <h3><b>Shop</b></h3>
         </div>
         <!-- End Logobar -->
         <!-- Start Profilebar -->

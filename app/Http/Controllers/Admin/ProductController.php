@@ -7,7 +7,9 @@ use App\Item;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Image;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -68,16 +70,13 @@ class ProductController extends Controller
         $item->date = Carbon::now()->addHour(6);
         //Auto resize with 500 wide/ 500 height
         if($request->hasFile('image')){
-            $image = $request->file('image');
-            $OriginalExtension = $image->getClientOriginalExtension();
-            $image_name = 'product-' . Carbon::now()->addHour(6) .'.'. $OriginalExtension;
-            $destinationPath = ('uploads/images');
-            $resize_image = Image::make($image->getRealPath());
-            $resize_image->resize(500, 500, function($constraint){
-                $constraint->aspectRatio();
-            });
-            $resize_image->save($destinationPath . '/' . $image_name);
-            $item->image = $image_name;
+
+            $image             = $request->file('image');
+            $folder_path       = 'uploads/images/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+            //resize and save to server
+            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            $item->image   = $folder_path . $image_new_name;
         }
         $item->save();
         $message = 'Successfully store this product';

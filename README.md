@@ -27,3 +27,5 @@ admin rele -> email : admin@gmail.com
             password : password
 staff rele -> email : staff@gmail.com
             password : password
+staff rele (deactive)-> email : staff2@gmail.com
+            password : password

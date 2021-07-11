@@ -8,7 +8,7 @@
     <meta name="author" content="Themesbox">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>BD Hike Plus - Login</title>
+    <title>Shop - Login</title>
     <!-- Fevicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
     <!-- Start CSS -->
@@ -38,7 +38,7 @@
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
-                                        <h4 class="text-primary mb-4"><b>Login to BD Hike Plus!</b></h4>
+                                        <h4 class="text-primary mb-4"><b>Login to Shop!</b></h4>
                                         <div class="form-group">
                                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email address">
                                         </div>

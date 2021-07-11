@@ -102,7 +102,7 @@
     <!-- Start Footerbar -->
     <div class="footerbar">
         <footer class="footer">
-            <p class="mb-0"><a href="https://www.datatechbd.com/" target="_blank"><b>Design & Developed By DataTech BD Ltd.</b></a>© 2020 BD HIKE PLUS - All Rights Reserved.</p>
+            <p class="mb-0"><a href="https://www.datatechbd.com/" target="_blank"><b>Design & Developed By DataTech BD Ltd.</b></a>© 2020 Shop - All Rights Reserved.</p>
         </footer>
     </div>
     <!-- End Footerbar -->
